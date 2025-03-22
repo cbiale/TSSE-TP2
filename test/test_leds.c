@@ -109,4 +109,9 @@ void test_apagar_todos_los_leds (void) {
     TEST_ASSERT_EQUAL_HEX16(0x0000, leds_virtuales);
 }
 
+//! @test Consultar el estado de un LED que está encendido
+void test_consultar_estado_led_encendido (void) {
+    LedsOnSingle(4);
+    TEST_ASSERT_TRUE(LedsIsOnSingle(4));
+}
 /* === End of documentation ==================================================================== */

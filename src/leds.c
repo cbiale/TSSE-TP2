@@ -31,6 +31,7 @@ SOFTWARE.
 
 #include "leds.h"
 
+
 /* === Macros definitions ====================================================================== */
 
 //! @brief Máscara de bits para apagar todos los LEDs.
@@ -41,6 +42,8 @@ SOFTWARE.
 #define LEDS_TO_BITS_OFFSET  1
 //! @brief Constante con el primer bit en uno para generar una máscara.
 #define FIRST_BIT            1
+//! @brief Define que el led se encuentra apagado
+#define LED_OFF              0
 
 /* === Private data type declarations ========================================================== */
 
@@ -90,6 +93,14 @@ void LedsOnAll (void) {
 
 void LedsOffAll (void) {
     *port_address = ALL_LEDS_OFF;
+}
+
+bool LedsIsOnSingle(uint8_t led) {
+    if ((*port_address & LedToMask(led)) != LED_OFF) {
+        return true;
+    } else {
+        return false;
+    };
 }
 
 /* === End of documentation ==================================================================== */

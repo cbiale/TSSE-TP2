@@ -28,12 +28,16 @@
   :line: 106
   :message: ''
   :unity_test_time: 0
+- :test: test_consultar_estado_led_encendido
+  :line: 113
+  :message: ''
+  :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 6
-  :passed: 6
+  :total: 7
+  :passed: 7
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.001917356999911135
+:time: 0.002698023999982979

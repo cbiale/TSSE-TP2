@@ -33,6 +33,7 @@ SOFTWARE.
 /* === Headers files inclusions ================================================================ */
 
 #include <stdint.h>
+#include <stdbool.h>
 
 /* === Cabecera C++ ============================================================================ */
 
@@ -80,6 +81,16 @@ void LedsOnAll (void);
  * @brief Apaga todos los LEDs de una vez.
  */
 void LedsOffAll (void);
+
+/**
+ * @brief Consulta si un LED está encendido.
+ * 
+ * @param led Número de LED a consultar.
+ * 
+ * @return true si el LED está encendido, false en caso contrario.
+ */
+bool LedsIsOnSingle (uint8_t led);
+
 
 /* === End of documentation ==================================================================== */
 
