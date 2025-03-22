@@ -2,6 +2,12 @@
 
 ## Uso del repositorio
 
+Este repositorio usa `ceedling` para los test. Para ejecutar los test debe invocar el comando:
+
+```
+ceedling
+```
+
 Este repositorio utiliza `pre-commit` para validaciones de formato. Para trabajar con el mismo usted debe tener instalado: `pre-commit` (https://pre-commit.com/#install).
 
 Después de clonar el repositorio se debe ejecutar el comando:
