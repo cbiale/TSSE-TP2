@@ -85,7 +85,7 @@ void test_apagar_led_individual (void) {
     LedsInit(&leds_virtuales);
     LedsOnSingle(4);
     LedsOffSingle(4);
-    TEST_ASSERT_EQUAL_HEX16(0x0008, leds_virtuales);
+    TEST_ASSERT_EQUAL_HEX16(0x0000, leds_virtuales);
 }
 
 /* === End of documentation ==================================================================== */
