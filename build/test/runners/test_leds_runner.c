@@ -34,9 +34,6 @@ static void CMock_Destroy(void)
 {
 }
 
-/*=======Setup (stub)=====*/
-void setUp(void) {}
-
 /*=======Teardown (stub)=====*/
 void tearDown(void) {}
 
@@ -107,9 +104,9 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
   }
 #endif
   UnityBegin("test_leds.c");
-  run_test(test_todos_los_leds_inician_apagados, "test_todos_los_leds_inician_apagados", 65);
-  run_test(test_prender_led_individual, "test_prender_led_individual", 73);
-  run_test(test_apagar_led_individual, "test_apagar_led_individual", 82);
+  run_test(test_todos_los_leds_inician_apagados, "test_todos_los_leds_inician_apagados", 70);
+  run_test(test_prender_led_individual, "test_prender_led_individual", 78);
+  run_test(test_apagar_led_individual, "test_apagar_led_individual", 84);
 
   return UNITY_END();
 }

@@ -5,23 +5,23 @@
   :basename: test_leds.c
 :successes:
 - :test: test_todos_los_leds_inician_apagados
-  :line: 65
+  :line: 70
   :message: ''
   :unity_test_time: 0
 - :test: test_prender_led_individual
-  :line: 73
+  :line: 78
   :message: ''
   :unity_test_time: 0
-:failures:
 - :test: test_apagar_led_individual
-  :line: 88
-  :message: Expected 0x0008 Was 0x0000
+  :line: 84
+  :message: ''
   :unity_test_time: 0
+:failures: []
 :ignores: []
 :counts:
   :total: 3
-  :passed: 2
-  :failed: 1
+  :passed: 3
+  :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.0022583050013054162
+:time: 0.00176640499921632

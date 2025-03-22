@@ -50,6 +50,7 @@ SOFTWARE.
 /* === Private data type declarations ========================================================== */
 
 /* === Private variable declarations =========================================================== */
+static uint16_t leds_virtuales = 0xFFFF;
 
 /* === Private function declarations =========================================================== */
 
@@ -61,6 +62,10 @@ SOFTWARE.
 
 /* === Public function implementation ========================================================== */
 
+void setUp(void) {
+    LedsInit(&leds_virtuales);
+}
+
 //! @test Con la inicialización todos los LEDs quedan apagados.
 void test_todos_los_leds_inician_apagados (void) {
     uint16_t leds_virtuales = 0xFFFF;
@@ -71,18 +76,12 @@ void test_todos_los_leds_inician_apagados (void) {
 
 //! @test Prender un LED individual.
 void test_prender_led_individual (void) {
-    uint16_t leds_virtuales = 0xFFFF;
-
-    LedsInit(&leds_virtuales);
     LedsOnSingle(4);
     TEST_ASSERT_EQUAL_HEX16(0x0008, leds_virtuales);
 }
 
 //! @test Apagar un LED individual. 
 void test_apagar_led_individual (void) {
-    uint16_t leds_virtuales = 0xFFFF;
-
-    LedsInit(&leds_virtuales);
     LedsOnSingle(4);
     LedsOffSingle(4);
     TEST_ASSERT_EQUAL_HEX16(0x0000, leds_virtuales);
