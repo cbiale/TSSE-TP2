@@ -1,4 +1,4 @@
-# Trabajo práctico número 4
+# TSSE - Trabajo práctico número 2
 
 ## Uso del repositorio
 
@@ -28,8 +28,6 @@ Para limpiar el proyecto se utiliza el comando:
 make clean
 ```
 ## Consideraciones
-
-Se ha documentado los archivo `.h` y `.c`, se consideró esta opción debido a que se puede documentar un `.h` para interfaces públicas que otros desarrolladores usarán. y el `.c` para detalles internos, algoritmos y funciones privadas que otros desarrolladores no necesitan conocer a menos que trabajen en la implementación.
 
 Se ha decido usar la opción de definir la licencia desde github.
 
