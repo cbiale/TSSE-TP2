@@ -37,9 +37,19 @@ SOFTWARE.
 
 /* === Private variable declarations =========================================================== */
 
+//! Puntero a la dirección de memoria de los LEDs.
 static uint16_t * port_address;
 
 /* === Private function declarations =========================================================== */
+
+/**
+ * @brief Convierte un número de LED a una máscara de bits.
+ * 
+ * @param led Número de LED.
+ * 
+ * @return Máscara de bits a utilizar.
+ */
+static uint16_t LedToMask (uint8_t led);
 
 /* === Public variable definitions ============================================================= */
 
@@ -47,6 +57,9 @@ static uint16_t * port_address;
 
 /* === Private function implementation ========================================================= */
 
+static uint16_t LedToMask (uint8_t led) {
+    return (1 << (led - 1));
+}
 /* === Public function implementation ========================================================== */
 
 void LedsInit(uint16_t * direccion) {
@@ -55,10 +68,10 @@ void LedsInit(uint16_t * direccion) {
 }
 
 void LedsOnSingle (uint8_t led) {
-    *port_address != 1 << (led - 1); 
+    *port_address != LedToMask(led); 
 }
 
 void LedsOffSingle (uint8_t led) {
-    *port_address &= ~(1 << (led - 1)); 
+    *port_address &= ~LedToMask(led); 
 }
 /* === End of documentation ==================================================================== */
