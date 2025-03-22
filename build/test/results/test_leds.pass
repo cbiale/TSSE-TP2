@@ -32,12 +32,16 @@
   :line: 113
   :message: ''
   :unity_test_time: 0
+- :test: test_consultar_estado_led_apagado
+  :line: 119
+  :message: ''
+  :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 7
-  :passed: 7
+  :total: 8
+  :passed: 8
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.002698023999982979
+:time: 0.001909427999635227

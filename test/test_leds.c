@@ -114,4 +114,12 @@ void test_consultar_estado_led_encendido (void) {
     LedsOnSingle(4);
     TEST_ASSERT_TRUE(LedsIsOnSingle(4));
 }
+
+//! @test Consultar el estado de un LED que está apagado
+void test_consultar_estado_led_apagado (void) {
+    LedsOnSingle(4);
+    LedsOffSingle(4);
+    TEST_ASSERT_FALSE(LedsIsOnSingle(4));
+}
+
 /* === End of documentation ==================================================================== */
