@@ -33,17 +33,24 @@ SOFTWARE.
 
 /* === Macros definitions ====================================================================== */
 
+//! @brief Máscara de bits para apagar todos los LEDs.
+#define ALL_LEDS_OFF         0x0000
+//! @brief Diferencia entre el número de led y el número de bit.
+#define LEDS_TO_BITS_OFFSET  1
+//! @brief Constante con el primer bit en uno para generar una máscara.
+#define FIRST_BIT            1
+
 /* === Private data type declarations ========================================================== */
 
 /* === Private variable declarations =========================================================== */
 
-//! Puntero a la dirección de memoria de los LEDs.
+//! @brief Variable privada para almacenar la dirección del puerto de salida.
 static uint16_t * port_address;
 
 /* === Private function declarations =========================================================== */
 
 /**
- * @brief Convierte un número de LED a una máscara de bits.
+ * @brief Función privada que convierte un número de LED a una máscara de bits.
  * 
  * @param led Número de LED.
  * 
@@ -58,17 +65,17 @@ static uint16_t LedToMask (uint8_t led);
 /* === Private function implementation ========================================================= */
 
 static uint16_t LedToMask (uint8_t led) {
-    return (1 << (led - 1));
+    return (FIRST_BIT << (led - LEDS_TO_BITS_OFFSET));
 }
 /* === Public function implementation ========================================================== */
 
 void LedsInit(uint16_t * direccion) {
     port_address = direccion;
-    *port_address = 0;
+    *port_address = ALL_LEDS_OFF;
 }
 
 void LedsOnSingle (uint8_t led) {
-    *port_address != LedToMask(led); 
+    *port_address |= LedToMask(led); 
 }
 
 void LedsOffSingle (uint8_t led) {
