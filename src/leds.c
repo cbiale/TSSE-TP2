@@ -81,4 +81,9 @@ void LedsOnSingle (uint8_t led) {
 void LedsOffSingle (uint8_t led) {
     *port_address &= ~LedToMask(led); 
 }
+
+void LedsOnAll (void) {
+    *port_address = 0xFFFF;
+}
+
 /* === End of documentation ==================================================================== */

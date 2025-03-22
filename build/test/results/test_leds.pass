@@ -20,12 +20,16 @@
   :line: 91
   :message: ''
   :unity_test_time: 0
+- :test: test_prender_todos_los_leds
+  :line: 100
+  :message: ''
+  :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 4
-  :passed: 4
+  :total: 5
+  :passed: 5
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.002888035000069067
+:time: 0.0020432569999684347

@@ -71,6 +71,11 @@ void LedsOnSingle (uint8_t led);
  */
 void LedsOffSingle (uint8_t led);
 
+/**
+ * @brief Enciende todos los LEDs de una vez.
+ */
+void LedsOnAll (void);
+
 /* === End of documentation ==================================================================== */
 
 #ifdef __cplusplus
