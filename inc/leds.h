@@ -76,6 +76,11 @@ void LedsOffSingle (uint8_t led);
  */
 void LedsOnAll (void);
 
+/**
+ * @brief Apaga todos los LEDs de una vez.
+ */
+void LedsOffAll (void);
+
 /* === End of documentation ==================================================================== */
 
 #ifdef __cplusplus

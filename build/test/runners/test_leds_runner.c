@@ -20,6 +20,7 @@ extern void test_prender_led_individual(void);
 extern void test_apagar_led_individual(void);
 extern void test_prender_y_apagar_algunos_leds(void);
 extern void test_prender_todos_los_leds(void);
+extern void test_apagar_todos_los_leds(void);
 
 
 /*=======Mock Management=====*/
@@ -104,6 +105,8 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
       UNITY_PRINT_EOL();
       UnityPrint("  test_prender_todos_los_leds");
       UNITY_PRINT_EOL();
+      UnityPrint("  test_apagar_todos_los_leds");
+      UNITY_PRINT_EOL();
       return 0;
     }
     return parse_status;
@@ -115,6 +118,7 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
   run_test(test_apagar_led_individual, "test_apagar_led_individual", 84);
   run_test(test_prender_y_apagar_algunos_leds, "test_prender_y_apagar_algunos_leds", 91);
   run_test(test_prender_todos_los_leds, "test_prender_todos_los_leds", 100);
+  run_test(test_apagar_todos_los_leds, "test_apagar_todos_los_leds", 106);
 
   return UNITY_END();
 }

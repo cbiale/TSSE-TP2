@@ -86,4 +86,8 @@ void LedsOnAll (void) {
     *port_address = 0xFFFF;
 }
 
+void LedsOffAll (void) {
+    *port_address = 0x0000;
+}
+
 /* === End of documentation ==================================================================== */
