@@ -57,6 +57,20 @@ extern "C" {
  */
 void LedsInit(uint16_t * direccion);
 
+/**
+ * @brief Enciende un LED individual.
+ * 
+ * @param led Número de LED a encender.
+ */
+void LedsOnSingle (uint8_t led);
+
+/**
+ * @brief Apaga un LED individual.
+ * 
+ * @param led Número de LED a apagar.
+ */
+void LedsOffSingle (uint8_t led);
+
 /* === End of documentation ==================================================================== */
 
 #ifdef __cplusplus

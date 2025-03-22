@@ -37,6 +37,8 @@ SOFTWARE.
 
 /* === Private variable declarations =========================================================== */
 
+static uint16_t * port_address;
+
 /* === Private function declarations =========================================================== */
 
 /* === Public variable definitions ============================================================= */
@@ -48,6 +50,15 @@ SOFTWARE.
 /* === Public function implementation ========================================================== */
 
 void LedsInit(uint16_t * direccion) {
-    *direccion = 0;
+    port_address = direccion;
+    *port_address = 0;
+}
+
+void LedsOnSingle (uint8_t led) {
+    *port_address = 0x0008; 
+}
+
+void LedsOffSingle (uint8_t led) {
+    *port_address = 0x0000;
 }
 /* === End of documentation ==================================================================== */
