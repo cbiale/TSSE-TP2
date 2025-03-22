@@ -55,10 +55,10 @@ void LedsInit(uint16_t * direccion) {
 }
 
 void LedsOnSingle (uint8_t led) {
-    *port_address = 0x0008; 
+    *port_address != 1 << (led - 1); 
 }
 
 void LedsOffSingle (uint8_t led) {
-    *port_address = 0x0000;
+    *port_address &= ~(1 << (led - 1)); 
 }
 /* === End of documentation ==================================================================== */

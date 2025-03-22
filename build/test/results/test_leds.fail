@@ -8,20 +8,24 @@
   :line: 70
   :message: ''
   :unity_test_time: 0
-- :test: test_prender_led_individual
-  :line: 78
-  :message: ''
-  :unity_test_time: 0
 - :test: test_apagar_led_individual
   :line: 84
   :message: ''
   :unity_test_time: 0
-:failures: []
+:failures:
+- :test: test_prender_led_individual
+  :line: 80
+  :message: Expected 0x0008 Was 0x0000
+  :unity_test_time: 0
+- :test: test_prender_y_apagar_algunos_leds
+  :line: 96
+  :message: Expected 0x0020 Was 0x0000
+  :unity_test_time: 0
 :ignores: []
 :counts:
-  :total: 3
-  :passed: 3
-  :failed: 0
+  :total: 4
+  :passed: 2
+  :failed: 2
   :ignored: 0
 :stdout: []
-:time: 0.00176640499921632
+:time: 0.0017936950007424457
