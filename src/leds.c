@@ -35,6 +35,8 @@ SOFTWARE.
 
 //! @brief Máscara de bits para apagar todos los LEDs.
 #define ALL_LEDS_OFF         0x0000
+//! @brief Máscara de bits para encender todos los LEDs.
+#define ALL_LEDS_ON          0xFFFF
 //! @brief Diferencia entre el número de led y el número de bit.
 #define LEDS_TO_BITS_OFFSET  1
 //! @brief Constante con el primer bit en uno para generar una máscara.
@@ -71,7 +73,7 @@ static uint16_t LedToMask (uint8_t led) {
 
 void LedsInit(uint16_t * direccion) {
     port_address = direccion;
-    *port_address = ALL_LEDS_OFF;
+    LedsOffAll();
 }
 
 void LedsOnSingle (uint8_t led) {
@@ -83,11 +85,11 @@ void LedsOffSingle (uint8_t led) {
 }
 
 void LedsOnAll (void) {
-    *port_address = 0xFFFF;
+    *port_address = ALL_LEDS_ON;
 }
 
 void LedsOffAll (void) {
-    *port_address = 0x0000;
+    *port_address = ALL_LEDS_OFF;
 }
 
 /* === End of documentation ==================================================================== */
