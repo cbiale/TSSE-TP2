@@ -83,7 +83,7 @@ static bool insideLimits(uint8_t led);
 /* === Private function implementation ========================================================= */
 
 static uint16_t LedToMask (uint8_t led) {
-    return (ALL_LEDS_ON) & (FIRST_BIT << (led - LEDS_TO_BITS_OFFSET));
+    return (FIRST_BIT << (led - LEDS_TO_BITS_OFFSET));
 }
 
 static bool insideLimits(uint8_t led) {
