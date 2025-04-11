@@ -36,12 +36,24 @@
   :line: 119
   :message: ''
   :unity_test_time: 0
+- :test: test_revisar_limites_inferior
+  :line: 125
+  :message: ''
+  :unity_test_time: 0
+- :test: test_revisar_limites_superior
+  :line: 131
+  :message: ''
+  :unity_test_time: 0
+- :test: test_revisar_parametros_fuera_de_limites
+  :line: 136
+  :message: ''
+  :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 8
-  :passed: 8
+  :total: 11
+  :passed: 11
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.001909427999635227
+:time: 0.002593235998574528

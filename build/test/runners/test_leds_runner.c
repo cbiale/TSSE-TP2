@@ -23,6 +23,9 @@ extern void test_prender_todos_los_leds(void);
 extern void test_apagar_todos_los_leds(void);
 extern void test_consultar_estado_led_encendido(void);
 extern void test_consultar_estado_led_apagado(void);
+extern void test_revisar_limites_inferior(void);
+extern void test_revisar_limites_superior(void);
+extern void test_revisar_parametros_fuera_de_limites(void);
 
 
 /*=======Mock Management=====*/
@@ -113,6 +116,12 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
       UNITY_PRINT_EOL();
       UnityPrint("  test_consultar_estado_led_apagado");
       UNITY_PRINT_EOL();
+      UnityPrint("  test_revisar_limites_inferior");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_revisar_limites_superior");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_revisar_parametros_fuera_de_limites");
+      UNITY_PRINT_EOL();
       return 0;
     }
     return parse_status;
@@ -127,6 +136,9 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
   run_test(test_apagar_todos_los_leds, "test_apagar_todos_los_leds", 106);
   run_test(test_consultar_estado_led_encendido, "test_consultar_estado_led_encendido", 113);
   run_test(test_consultar_estado_led_apagado, "test_consultar_estado_led_apagado", 119);
+  run_test(test_revisar_limites_inferior, "test_revisar_limites_inferior", 125);
+  run_test(test_revisar_limites_superior, "test_revisar_limites_superior", 131);
+  run_test(test_revisar_parametros_fuera_de_limites, "test_revisar_parametros_fuera_de_limites", 136);
 
   return UNITY_END();
 }

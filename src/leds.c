@@ -44,6 +44,10 @@ SOFTWARE.
 #define FIRST_BIT            1
 //! @brief Define que el led se encuentra apagado
 #define LED_OFF              0
+//! @brief Constate que indica el primer led valido
+#define FIRST_LED            1
+//! @brief Constate que indica el ultimo led valido
+#define LAST_LED             16
 
 /* === Private data type declarations ========================================================== */
 
@@ -63,6 +67,15 @@ static uint16_t * port_address;
  */
 static uint16_t LedToMask (uint8_t led);
 
+/**
+ * @brief Función privada que verifica si el número de LED está dentro de los límites válidos.
+ * 
+ * @param led Número de LED.
+ * 
+ * @return true si el número de LED está dentro de los límites, false en caso contrario.
+ */
+static bool insideLimits(uint8_t led);
+
 /* === Public variable definitions ============================================================= */
 
 /* === Private variable definitions ============================================================ */
@@ -70,7 +83,11 @@ static uint16_t LedToMask (uint8_t led);
 /* === Private function implementation ========================================================= */
 
 static uint16_t LedToMask (uint8_t led) {
-    return (FIRST_BIT << (led - LEDS_TO_BITS_OFFSET));
+    return (ALL_LEDS_ON) & (FIRST_BIT << (led - LEDS_TO_BITS_OFFSET));
+}
+
+static bool insideLimits(uint8_t led) {
+  return (led >= FIRST_LED) && (led <= LAST_LED);
 }
 /* === Public function implementation ========================================================== */
 
@@ -96,6 +113,9 @@ void LedsOffAll (void) {
 }
 
 bool LedsIsOnSingle(uint8_t led) {
+    if (insideLimits(led) == false) {
+        return false;
+    }
     if ((*port_address & LedToMask(led)) != LED_OFF) {
         return true;
     } else {
