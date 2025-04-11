@@ -121,5 +121,19 @@ void test_consultar_estado_led_apagado (void) {
     LedsOffSingle(4);
     TEST_ASSERT_FALSE(LedsIsOnSingle(4));
 }
+//! @test Revisar limites de los parámetros.
+void test_revisar_limites_parametros (void) {
+    LedsOnSingle(1);
+    TEST_ASSERT_EQUAL_HEX16(0x0001, leds_virtuales);
+    LedsOnSingle(16);
+    TEST_ASSERT_EQUAL_HEX16(0x8000, leds_virtuales);
+}
+//! @test Revisar parámetros fuera de limites
+void test_revisar_parametros_fuera_de_limites (void) {
+    LedsOnSingle(0);
+    TEST_ASSERT_EQUAL_HEX16(0x0000, leds_virtuales);
+    LedsOnSingle(17);
+    TEST_ASSERT_EQUAL_HEX16(0x0000, leds_virtuales);
+}
 
 /* === End of documentation ==================================================================== */
